@@ -1,24 +1,6 @@
-# R&D Capital Intelligence — Concept Website
+# R&D Capital Intelligence
 
-A static concept website for an agentic AI product that translates technical R&D evidence into finance-ready capital allocation decisions.
-
-## Run locally
-
-Open `index.html` in any modern browser. No build step is required.
-
-For a local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
-
-## Files
-
-- `index.html` — site content and research links
-- `styles.css` — responsive visual design
-- `script.js` — interactive R&D funding simulator
+A website for an agentic AI product that translates technical R&D evidence into finance-ready capital allocation decisions.
 
 ## Research included
 
