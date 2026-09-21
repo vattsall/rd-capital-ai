@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R&D Capital Intelligence — Translate Technology into Capital Decisions</title>
+  <meta name="description" content="A concept for an agentic AI system that translates technical R&D evidence into finance-ready capital allocation decisions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="R&D Capital Intelligence home">
+        <span class="brand-mark">R&</span>
+        <span>R&D Capital Intelligence</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#system">System</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#research">Research</a>
+      </div>
+      <a class="nav-cta" href="#mvp">Build the MVP</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container section">
+      <div class="eyebrow"><span class="pulse"></span> CONCEPT / AGENTIC AI × CORPORATE FINANCE × R&D</div>
+      <h1>Make technical conviction<br><span>legible to capital.</span></h1>
+      <p class="hero-copy">
+        Companies often make their most important technology bets through a translation layer: engineers know what is technically possible; finance knows what the company can afford. The failure mode is not that one side is wrong — it is that critical technical information can be difficult to convert into a decision model finance can audit, compare, and fund.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#system">See the decision engine</a>
+        <a class="btn ghost" href="#research">Read the evidence</a>
+      </div>
+
+      <div class="hero-visual card">
+        <div class="visual-head">
+          <span>CAPITAL TRANSLATION LAYER</span>
+          <span class="status"><i></i> LIVE DECISION GRAPH</span>
+        </div>
+        <div class="bridge-grid">
+          <div class="side-panel tech-panel">
+            <p class="micro">ENGINEERING SIGNAL</p>
+            <h3>“We need $6.0M for inference optimization.”</h3>
+            <ul>
+              <li>Memory bandwidth bottleneck</li>
+              <li>GPU utilization: 41%</li>
+              <li>P95 latency: 890 ms</li>
+              <li>Expected utilization after work: 63–70%</li>
+            </ul>
+          </div>
+          <div class="translator">
+            <div class="agent-orb">AI</div>
+            <div class="connector"></div>
+            <p>evidence<br>→ model<br>→ decision</p>
+          </div>
+          <div class="side-panel finance-panel">
+            <p class="micro">FINANCE DECISION</p>
+            <h3>Stage $1.1M now. Release $4.9M at milestone.</h3>
+            <ul>
+              <li>Cost / 1M tokens: −24% to −31%</li>
+              <li>Annualized gross profit impact: +$9.4M</li>
+              <li>Payback: 7–10 months</li>
+              <li>Kill gate: utilization &lt; 52% after phase 1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section dark-band">
+      <div class="container">
+        <div class="section-kicker">01 / THE PROBLEM</div>
+        <div class="split-heading">
+          <h2>The R&D budget is an<br>information problem.</h2>
+          <p>
+            R&D differs from normal capital spending: outcomes are uncertain, much of the asset is intangible, and the people closest to the technology usually hold information that is hard to summarize in conventional financial metrics. That creates an internal information gap before a single dollar is allocated.
+          </p>
+        </div>
+
+        <div class="problem-flow">
+          <div class="flow-card">
+            <span class="number">01</span>
+            <h3>Technical insight is “soft”</h3>
+            <p>Benchmarks, architecture tradeoffs, tacit engineering judgment, failure modes, and research uncertainty are difficult to compress into a spreadsheet.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-card">
+            <span class="number">02</span>
+            <h3>Finance needs comparability</h3>
+            <p>Projects compete for limited cash, headcount, compute, and time. Finance needs a common language for return, risk, timing, and downside.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-card accent-card">
+            <span class="number">03</span>
+            <h3>Translation failure</h3>
+            <p>High-potential R&D can be underfunded, while persuasive but weak projects can also be overfunded. The issue is allocation quality — not automatically “more R&D.”</p>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <p>When information about investment projects is soft and cannot be credibly transmitted, hierarchy can struggle to allocate capital efficiently.</p>
+          <span>Conceptual implication of Jeremy C. Stein (2002), <em>Information Production and Capital Allocation</em>.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="section container">
+      <div class="section-kicker">02 / THE SYSTEM</div>
+      <div class="split-heading">
+        <h2>An AI operating layer<br>between CTO and CFO.</h2>
+        <p>
+          The product does not replace engineering judgment or financial control. It converts technical evidence into a traceable economic model, asks what information is missing, and recommends staged capital decisions with explicit assumptions.
+        </p>
+      </div>
+
+      <div class="architecture card">
+        <div class="arch-col">
+          <p class="micro">TECHNICAL INPUTS</p>
+          <div class="chip">Benchmarks</div>
+          <div class="chip">Git / Jira / Linear</div>
+          <div class="chip">Experiment logs</div>
+          <div class="chip">Architecture docs</div>
+          <div class="chip">Research papers</div>
+        </div>
+        <div class="arch-line"></div>
+        <div class="arch-core">
+          <div class="core-ring ring-1"></div>
+          <div class="core-ring ring-2"></div>
+          <div class="core-content">
+            <strong>R&D<br>DECISION<br>GRAPH</strong>
+            <span>evidence + economics</span>
+          </div>
+        </div>
+        <div class="arch-line"></div>
+        <div class="arch-col">
+          <p class="micro">FINANCIAL INPUTS</p>
+          <div class="chip">Budget / runway</div>
+          <div class="chip">Unit economics</div>
+          <div class="chip">Cloud / capex costs</div>
+          <div class="chip">Demand forecasts</div>
+          <div class="chip">Cost of capital</div>
+        </div>
+      </div>
+
+      <div class="agent-grid">
+        <article class="agent-card">
+          <span>01</span><h3>Technical Agent</h3>
+          <p>Builds a causal model of the system: bottlenecks, dependencies, performance limits, engineering effort, and technical uncertainty.</p>
+        </article>
+        <article class="agent-card">
+          <span>02</span><h3>Economics Agent</h3>
+          <p>Maps technical metrics into dollars: throughput → cost per unit → margin → cash flow → strategic economic impact.</p>
+        </article>
+        <article class="agent-card">
+          <span>03</span><h3>Evidence Agent</h3>
+          <p>Separates observed facts from assumptions, reconciles conflicting numbers, and records confidence and source provenance.</p>
+        </article>
+        <article class="agent-card">
+          <span>04</span><h3>Experiment Agent</h3>
+          <p>Finds the cheapest next experiment that can reduce the most economically important uncertainty before more capital is committed.</p>
+        </article>
+        <article class="agent-card">
+          <span>05</span><h3>Portfolio Optimizer</h3>
+          <p>Allocates cash, engineers, compute, and time across competing projects under budget and organizational constraints.</p>
+        </article>
+        <article class="agent-card">
+          <span>06</span><h3>Decision Memo Agent</h3>
+          <p>Produces an auditable CFO/board memo: fund, stage, pause, kill, outsource, acquire, or run another experiment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section dark-band">
+      <div class="container">
+        <div class="section-kicker">03 / DECISION LOGIC</div>
+        <h2 class="wide-title">Do not optimize for “ROI.”<br><span>Optimize the sequence of learning and capital.</span></h2>
+
+        <div class="equation-card">
+          <div class="equation-label">OBJECTIVE</div>
+          <div class="equation">Expected Value + Option Value + Information Value + Strategic Value <b>−</b> Capital Cost <b>−</b> Risk</div>
+          <div class="constraints">
+            <span>Cash ≤ Budget</span>
+            <span>Engineers ≤ Capacity</span>
+            <span>Compute ≤ Available</span>
+            <span>Dependencies satisfied</span>
+          </div>
+        </div>
+
+        <div class="decision-loop">
+          <div class="loop-node"><b>1</b><span>Propose</span><small>Engineering thesis</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node"><b>2</b><span>Translate</span><small>Technical → economic</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node"><b>3</b><span>Test</span><small>Highest-value experiment</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node"><b>4</b><span>Update</span><small>Bayesian evidence</small></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node"><b>5</b><span>Allocate</span><small>Stage / scale / stop</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulator" class="section container">
+      <div class="section-kicker">04 / INTERACTIVE EXAMPLE</div>
+      <div class="split-heading">
+        <h2>Would you fund the<br>next phase?</h2>
+        <p>Change the assumptions. The point is not that a formula can replace judgment — it is that the technical thesis becomes explicit, testable, and comparable with other uses of capital.</p>
+      </div>
+
+      <div class="sim-grid">
+        <div class="sim-controls card">
+          <label>
+            <span>Full project cost</span><output id="costOut">$8.0M</output>
+            <input id="cost" type="range" min="1" max="25" value="8" step="0.5">
+          </label>
+          <label>
+            <span>Value if successful</span><output id="valueOut">$30M</output>
+            <input id="value" type="range" min="5" max="100" value="30" step="1">
+          </label>
+          <label>
+            <span>Technical success probability</span><output id="probOut">35%</output>
+            <input id="prob" type="range" min="5" max="95" value="35" step="1">
+          </label>
+          <label>
+            <span>Phase-1 experiment cost</span><output id="expCostOut">$0.8M</output>
+            <input id="expCost" type="range" min="0.1" max="5" value="0.8" step="0.1">
+          </label>
+          <label>
+            <span>Experiment can resolve uncertainty</span><output id="infoOut">70%</output>
+            <input id="info" type="range" min="10" max="95" value="70" step="5">
+          </label>
+        </div>
+
+        <div class="sim-result card">
+          <div class="result-top">
+            <span class="micro">AGENT RECOMMENDATION</span>
+            <span id="recommendationBadge" class="recommendation-badge">STAGE FIRST</span>
+          </div>
+          <h3 id="recommendationText">Fund the experiment before committing the full project budget.</h3>
+          <div class="metric-row">
+            <div><small>Naive project EV</small><strong id="evMetric">$2.5M</strong></div>
+            <div><small>Capital at risk now</small><strong id="riskMetric">$0.8M</strong></div>
+            <div><small>Information score</small><strong id="infoMetric">High</strong></div>
+          </div>
+          <div class="memo">
+            <div class="memo-title">DECISION MEMO</div>
+            <p id="memoText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section research-section">
+      <div class="container">
+        <div class="section-kicker">05 / RESEARCH BASE</div>
+        <div class="split-heading">
+          <h2>The thesis has a<br>real academic foundation.</h2>
+          <p>These papers do not prove that every finance–engineering disagreement causes underinvestment. They show the mechanisms the product is designed around: asymmetric information, soft information, internal capital-market distortions, short-term incentives, and staged R&D investment under uncertainty.</p>
+        </div>
+
+        <div class="papers">
+          <a class="paper" target="_blank" rel="noopener" href="https://stein.scholars.harvard.edu/publications/information-production-and-capital-allocation-decentralized-versus-hierarchical-f">
+            <div><span class="paper-year">2002</span><span class="paper-tag">CORE THESIS</span></div>
+            <h3>Information Production and Capital Allocation: Decentralized versus Hierarchical Firms</h3>
+            <p>Jeremy C. Stein · Journal of Finance</p>
+            <small>Why it matters → when project knowledge is “soft” and difficult to credibly transmit, hierarchy can have trouble allocating capital based on that information.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w15325">
+            <div><span class="paper-year">2009/10</span><span class="paper-tag">R&D FINANCE</span></div>
+            <h3>The Financing of R&D and Innovation</h3>
+            <p>Bronwyn H. Hall & Josh Lerner · NBER / Handbook of the Economics of Innovation</p>
+            <small>Why it matters → R&D is unusually exposed to information asymmetry, intangible assets, uncertainty, and financing frictions.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/abs/pii/S0304405X1300278X">
+            <div><span class="paper-year">2014</span><span class="paper-tag">INTERNAL CAPITAL</span></div>
+            <h3>Firm Boundaries Matter: Evidence from Conglomerates and R&D Activity</h3>
+            <p>Amit Seru · Journal of Financial Economics</p>
+            <small>Why it matters → evidence that organizational form and internal capital-market activity can affect the scale and novelty of innovation.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w10550">
+            <div><span class="paper-year">2004/05</span><span class="paper-tag">SHORT-TERM PRESSURE</span></div>
+            <h3>The Economic Implications of Corporate Financial Reporting</h3>
+            <p>John Graham, Campbell Harvey & Shiva Rajgopal · NBER / JAE</p>
+            <small>Why it matters → surveyed executives reported willingness to sacrifice long-term economic value to hit short-run reporting targets.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w5969">
+            <div><span class="paper-year">2000</span><span class="paper-tag">MISALLOCATION</span></div>
+            <h3>The Dark Side of Internal Capital Markets</h3>
+            <p>David Scharfstein & Jeremy Stein · Journal of Finance</p>
+            <small>Why it matters → internal politics and rent-seeking can distort capital budgeting, so the product must evaluate evidence rather than simply trust project advocates.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://link.springer.com/article/10.1007/s10479-025-06509-8">
+            <div><span class="paper-year">2025</span><span class="paper-tag">REAL OPTIONS</span></div>
+            <h3>A Real Options Methodology for Multi-Stage Project Selection</h3>
+            <p>Andrea Belz et al. · Annals of Operations Research</p>
+            <small>Why it matters → shows how staged R&D funding can be modeled as a portfolio optimization problem under uncertainty.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w34838">
+            <div><span class="paper-year">2026</span><span class="paper-tag">EXPERIMENTATION</span></div>
+            <h3>R&D Uncertainty and Cycles</h3>
+            <p>Nicolas Crouzet & Janice C. Eberly · NBER / AEA P&P</p>
+            <small>Why it matters → R&D can itself be valuable because investment generates information and resolves uncertainty.</small>
+          </a>
+
+          <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w26847">
+            <div><span class="paper-year">2020</span><span class="paper-tag">RISK BIAS</span></div>
+            <h3>The Risk of Caution: Evidence from an R&D Experiment</h3>
+            <p>Carson, Graff Zivin, Louviere, Sadoff & Shrader · NBER</p>
+            <small>Why it matters → experimental evidence that decision-makers can favor safer R&D projects even when higher-risk projects offer larger expected payoffs.</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-kicker">06 / WHY NOW</div>
+      <div class="semi-card card">
+        <div>
+          <p class="micro">A VISIBLE MARKET SIGNAL</p>
+          <h2>SemiAnalysis is already hiring humans to bridge technical systems and economics.</h2>
+          <p>Their AI Infrastructure & Economics role explicitly combines GPU capacity, prices, contracts, financing, unit economics, technical material, benchmark implications, and financial models. That is not the same product — but it is evidence that the translation layer itself is valuable work.</p>
+          <a target="_blank" rel="noopener" href="https://semianalysis.com/semianalysis-careers/#role-mts-research-analyst-ai-infrastructure-economics">Open the SemiAnalysis role ↗</a>
+        </div>
+        <div class="semi-stack">
+          <div>TECHNICAL MATERIAL</div>
+          <span>↓</span>
+          <div>BENCHMARK IMPLICATIONS</div>
+          <span>↓</span>
+          <div>UNIT ECONOMICS</div>
+          <span>↓</span>
+          <div>CAPITAL DECISION</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mvp" class="section dark-band">
+      <div class="container">
+        <div class="section-kicker">07 / MVP</div>
+        <div class="split-heading">
+          <h2>Start narrow:<br>AI infrastructure.</h2>
+          <p>A universal “AI CFO for R&D” is too broad. Start where engineering variables and financial outputs can actually be measured: AI infrastructure, inference, cloud capacity, GPUs, networking, and compute economics.</p>
+        </div>
+
+        <div class="mvp-grid">
+          <div class="mvp-step"><b>01</b><h3>One decision class</h3><p>“Where should the next $1 of AI infrastructure spend go?”</p></div>
+          <div class="mvp-step"><b>02</b><h3>Connect evidence</h3><p>Cloud bills, utilization, benchmark logs, traffic forecasts, GPU pricing, contracts.</p></div>
+          <div class="mvp-step"><b>03</b><h3>Build translation model</h3><p>Latency / throughput / utilization → cost per token → gross margin → cash impact.</p></div>
+          <div class="mvp-step"><b>04</b><h3>Generate decision memo</h3><p>Fund, stage, test, wait, or stop — with assumptions and kill gates.</p></div>
+        </div>
+
+        <div class="final-thesis">
+          <span>THE COMPANY THESIS</span>
+          <h2>Turn corporate R&D from a budget negotiation into an evidence-updating capital allocation system.</h2>
+          <p>Not “give engineers more money.” Give finance a better way to understand what the money is buying, what must be true for the bet to work, and what the company should learn before committing the next dollar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>R&D Capital Intelligence</strong><p>By vatsal Prajapati · September 2026</p></div>
+      <div><p>Research links point to publisher, university, or NBER pages. Illustrative financial examples are hypothetical and are not investment advice.</p></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
