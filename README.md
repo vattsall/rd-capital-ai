@@ -1,7 +1,7 @@
 # R&D Capital Intelligence
 ![Project Screenshot](images/mermaid-diagram.png)   
 
-AN agentic AI product that translates technical R&D evidence into finance-ready capital allocation decisions.
+An agentic AI product that translates technical R&D evidence into finance-ready capital allocation decisions.
 
 ## Research included
 
