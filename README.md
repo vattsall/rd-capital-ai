@@ -1,4 +1,5 @@
 # R&D Capital Intelligence
+![Project Screenshot](mermaid-diagram.png)   
 
 A website for an agentic AI product that translates technical R&D evidence into finance-ready capital allocation decisions.
 
