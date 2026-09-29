@@ -1,70 +1,109 @@
 const $ = (id) => document.getElementById(id);
 
 const controls = {
-  cost: $('cost'),
-  value: $('value'),
-  prob: $('prob'),
-  expCost: $('expCost'),
-  info: $('info')
+  gpuCount: $('gpuCount'),
+  runtime: $('runtime'),
+  gpuRate: $('gpuRate'),
+  pilotPercent: $('pilotPercent'),
+  decisionChance: $('decisionChance'),
+  approvalLimit: $('approvalLimit'),
+  successMetric: $('successMetric'),
+  successGate: $('successGate'),
+  priorEvidence: $('priorEvidence')
 };
 
 const outputs = {
-  cost: $('costOut'),
-  value: $('valueOut'),
-  prob: $('probOut'),
-  expCost: $('expCostOut'),
-  info: $('infoOut')
+  gpuCount: $('gpuCountOut'),
+  runtime: $('runtimeOut'),
+  gpuRate: $('gpuRateOut'),
+  pilotPercent: $('pilotPercentOut'),
+  decisionChance: $('decisionChanceOut'),
+  approvalLimit: $('approvalLimitOut'),
+  successGate: $('successGateOut')
 };
 
-function money(v, digits = 1) {
-  const sign = v < 0 ? '-' : '';
-  return `${sign}$${Math.abs(v).toFixed(digits)}M`;
+function money(value) {
+  const digits = Number.isInteger(value) ? 0 : 2;
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits
+  }).format(value);
+}
+
+function gpuHours(value) {
+  return `${value.toLocaleString()} GPU-${value === 1 ? 'hour' : 'hours'}`;
 }
 
 function update() {
-  const cost = Number(controls.cost.value);
-  const value = Number(controls.value.value);
-  const prob = Number(controls.prob.value) / 100;
-  const expCost = Number(controls.expCost.value);
-  const info = Number(controls.info.value) / 100;
+  const gpuCount = Number(controls.gpuCount.value);
+  const runtime = Number(controls.runtime.value);
+  const gpuRate = Number(controls.gpuRate.value);
+  const pilotPercent = Number(controls.pilotPercent.value) / 100;
+  const decisionChance = Number(controls.decisionChance.value) / 100;
+  const approvalLimit = Number(controls.approvalLimit.value);
+  const successMetric = controls.successMetric.value;
+  const successGate = Number(controls.successGate.value);
+  const priorEvidence = controls.priorEvidence.value;
 
-  outputs.cost.textContent = money(cost);
-  outputs.value.textContent = `$${value.toFixed(0)}M`;
-  outputs.prob.textContent = `${Math.round(prob * 100)}%`;
-  outputs.expCost.textContent = money(expCost);
-  outputs.info.textContent = `${Math.round(info * 100)}%`;
+  const fullGpuHours = gpuCount * runtime;
+  const fullCost = fullGpuHours * gpuRate;
+  const pilotGpuHours = Math.max(1, Math.ceil(fullGpuHours * pilotPercent));
+  const pilotCost = pilotGpuHours * gpuRate;
+  const pilotThenFullCost = pilotCost + fullCost;
+  const effectivePilotShare = pilotGpuHours / fullGpuHours;
 
-  const naiveEV = prob * value - cost;
-  const upsideAfterExperiment = (prob + (1 - prob) * info * 0.20);
-  const stagedEV = -expCost + info * Math.max(upsideAfterExperiment * value - cost, 0) + (1 - info) * Math.max(naiveEV, -expCost);
-  const informationValue = Math.max(stagedEV - naiveEV, 0);
+  outputs.gpuCount.textContent = `${gpuCount} GPU${gpuCount === 1 ? '' : 's'}`;
+  outputs.runtime.textContent = `${runtime} h`;
+  outputs.gpuRate.textContent = `${money(gpuRate)} / GPU-h`;
+  outputs.pilotPercent.textContent = `${Math.round(pilotPercent * 100)}%`;
+  outputs.decisionChance.textContent = `${Math.round(decisionChance * 100)}%`;
+  outputs.approvalLimit.textContent = money(approvalLimit);
+  outputs.successGate.textContent = successGate > 0 ? `${successGate}%` : 'Not defined';
 
-  $('evMetric').textContent = money(naiveEV);
-  $('riskMetric').textContent = money(expCost);
+  $('requestedMetric').textContent = `${fullGpuHours.toLocaleString()} GPU-h`;
+  $('costMetric').textContent = money(fullCost);
+  $('pilotMetric').textContent = `${pilotGpuHours.toLocaleString()} GPU-h · ${money(pilotCost)}`;
 
-  let infoLabel = 'Low';
-  if (info >= .65) infoLabel = 'High';
-  else if (info >= .4) infoLabel = 'Medium';
-  $('infoMetric').textContent = infoLabel;
+  const runSummary = `${gpuCount} GPU${gpuCount === 1 ? '' : 's'} × ${runtime} ${runtime === 1 ? 'hour' : 'hours'} is ${gpuHours(fullGpuHours)}, estimated at ${money(fullCost)}.`;
+  const gate = `Release follow-on compute only if ${successMetric} is at least ${successGate}%.`;
+  const evidenceNote = priorEvidence === 'partial'
+    ? ' Review the related prior evidence first and isolate what remains unanswered.'
+    : '';
 
-  let badge, headline, memo;
+  let badge;
+  let headline;
+  let memo;
 
-  if (naiveEV > 8 && prob >= .65) {
-    badge = 'FUND / SCALE';
-    headline = 'The evidence supports funding the project, with milestone controls.';
-    memo = `The base expected value is ${money(naiveEV)}. Technical success probability is ${Math.round(prob*100)}%, and the project has enough modeled upside to justify commitment. Preserve a milestone gate so new technical evidence can still stop or resize spending.`;
-  } else if (expCost <= cost * .20 && info >= .5) {
-    badge = 'STAGE FIRST';
-    headline = 'Fund the experiment before committing the full project budget.';
-    memo = `The full project requires ${money(cost)}, while a ${money(expCost)} phase can resolve roughly ${Math.round(info*100)}% of the key uncertainty. Even when the base expected value is ${money(naiveEV)}, the information from a staged test can prevent a much larger misallocation. Define the technical threshold that unlocks phase two before spending.`;
-  } else if (naiveEV > 0) {
-    badge = 'FUND WITH GATES';
-    headline = 'The project clears a basic value test, but uncertainty is still expensive.';
-    memo = `Base expected value is ${money(naiveEV)}. Because the proposed experiment is relatively expensive or weakly informative, use milestone-based releases rather than treating the project as a single all-or-nothing commitment.`;
+  if (priorEvidence === 'strong') {
+    badge = 'REVIEW EVIDENCE';
+    headline = 'Check whether existing results already answer the decision.';
+    memo = `${runSummary} The owner marked comparable evidence as strong and reusable. Review that evidence first, identify the unanswered delta, and require human approval before purchasing the same answer again.`;
+  } else if (successGate <= 0) {
+    badge = 'DEFINE GATE';
+    headline = 'Define what success means before queueing the run.';
+    memo = `${runSummary} No success threshold is recorded. Name the value that unlocks follow-on compute and the result that stops or redesigns the work.${evidenceNote}`;
+  } else if (decisionChance < 0.30) {
+    badge = 'DEFER / CLARIFY';
+    headline = 'Clarify which decision this evidence could change.';
+    memo = `${runSummary} The supplied chance of changing a decision is only ${Math.round(decisionChance * 100)}%. Define the action that would change, improve the experiment design, or defer the run until the result can influence a real choice.${evidenceNote}`;
+  } else if (effectivePilotShare <= 0.30 && decisionChance >= 0.50 && pilotCost <= approvalLimit) {
+    badge = 'RUN PILOT';
+    headline = 'Run a smaller pilot before releasing the full GPU request.';
+    memo = `${runSummary} The requested ${Math.round(pilotPercent * 100)}% pilot rounds to ${gpuHours(pilotGpuHours)} (${Math.round(effectivePilotShare * 100)}% of the full run) and ${money(pilotCost)}. ${gate} If the pilot and full run both execute, total compute cost could reach ${money(pilotThenFullCost)}.${evidenceNote}`;
+  } else if (fullCost <= approvalLimit) {
+    badge = 'APPROVE WITH LIMITS';
+    headline = 'The requested run fits the supplied limit; approve it with a hard cap.';
+    memo = `${runSummary} Keep the approval capped at ${gpuHours(fullGpuHours)} and ${money(fullCost)}. ${gate} Record the result even if it is negative so the evidence can be reused.${evidenceNote}`;
   } else {
-    badge = 'PAUSE / REDESIGN';
-    headline = 'The current thesis does not justify full funding.';
-    memo = `Base expected value is ${money(naiveEV)}. Do not assume this means the technology is bad; it means the current economic thesis is not strong enough. Ask engineering for a cheaper experiment, a smaller scope, a higher-value use case, or evidence that changes the success probability.`;
+    const blockers = [];
+    if (effectivePilotShare > 0.30) blockers.push(`the rounded pilot uses ${Math.round(effectivePilotShare * 100)}% of the full GPU-hours`);
+    if (decisionChance < 0.50) blockers.push(`its decision-change estimate is ${Math.round(decisionChance * 100)}%`);
+    if (pilotCost > approvalLimit) blockers.push(`its ${money(pilotCost)} cost exceeds the ${money(approvalLimit)} approval limit`);
+    badge = 'NARROW / REVIEW';
+    headline = 'Narrow the request or send it for explicit human review.';
+    memo = `${runSummary} The full request exceeds the ${money(approvalLimit)} preflight limit, and ${blockers.join('; ')}. Reduce scope, improve the pilot, or document why the full run should receive an exception.${evidenceNote}`;
   }
 
   $('recommendationBadge').textContent = badge;
@@ -72,5 +111,9 @@ function update() {
   $('memoText').textContent = memo;
 }
 
-Object.values(controls).forEach(input => input.addEventListener('input', update));
+Object.values(controls).forEach((control) => {
+  control.addEventListener('input', update);
+  control.addEventListener('change', update);
+});
+
 update();

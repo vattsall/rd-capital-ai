@@ -3,72 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>R&D Capital Intelligence — Translate Technology into Capital Decisions</title>
-  <meta name="description" content="A concept for an agentic AI system that translates technical R&D evidence into finance-ready capital allocation decisions." />
+  <title>GPU Experiment Allocator — Spend Compute to Learn</title>
+  <meta name="description" content="A concept for a human-in-the-loop system that helps AI teams decide which GPU experiments to run, at what scale, and when to stop." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="noise"></div>
   <header class="nav-wrap">
     <nav class="nav container">
-      <a class="brand" href="#top" aria-label="R&D Capital Intelligence home">
-        <span class="brand-mark">R&</span>
-        <span>R&D Capital Intelligence</span>
+      <a class="brand" href="#top" aria-label="GPU Experiment Allocator home">
+        <span class="brand-mark">GPU</span>
+        <span>Experiment Allocator</span>
       </a>
       <div class="nav-links">
         <a href="#problem">Problem</a>
-        <a href="#system">System</a>
-        <a href="#simulator">Simulator</a>
+        <a href="#system">Product</a>
+        <a href="#simulator">Preflight</a>
         <a href="#research">Research</a>
       </div>
-      <a class="nav-cta" href="#mvp">Build the MVP</a>
+      <a class="nav-cta" href="#mvp">See the MVP</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero container section">
-      <div class="eyebrow"><span class="pulse"></span> CONCEPT / AGENTIC AI × CORPORATE FINANCE × R&D</div>
-      <h1>Make technical conviction<br><span>legible to capital.</span></h1>
+      <div class="eyebrow"><span class="pulse"></span> CONCEPT PROTOTYPE / GPU EXPERIMENT DECISION SYSTEM</div>
+      <h1>Spend compute to learn.<br><span>Not just to run.</span></h1>
       <p class="hero-copy">
-        Companies often make their most important technology bets through a translation layer: engineers know what is technically possible; finance knows what the company can afford. The failure mode is not that one side is wrong — it is that critical technical information can be difficult to convert into a decision model finance can audit, compare, and fund.
+        A concept for a human-in-the-loop preflight layer for expensive GPU experiments. The proposed system would combine the hypothesis, prior evidence, expected cost, available capacity, and decision value to recommend what to run, at what scale, and what result should unlock more compute.
       </p>
       <div class="hero-actions">
-        <a class="btn primary" href="#system">See the decision engine</a>
-        <a class="btn ghost" href="#research">Read the evidence</a>
+        <a class="btn primary" href="#system">See how it works</a>
+        <a class="btn ghost" href="#simulator">Try the preflight</a>
+      </div>
+      <div class="prototype-note">
+        <strong>Prototype status</strong>
+        <span>Static, rule-based concept. No model calls, live integrations, scheduler control, or automated approvals.</span>
       </div>
 
       <div class="hero-visual card">
         <div class="visual-head">
-          <span>CAPITAL TRANSLATION LAYER</span>
-          <span class="status"><i></i> LIVE DECISION GRAPH</span>
+          <span>ILLUSTRATIVE EXPERIMENT PREFLIGHT</span>
+          <span class="status"><i></i> HUMAN APPROVAL REQUIRED</span>
         </div>
         <div class="bridge-grid">
           <div class="side-panel tech-panel">
-            <p class="micro">ENGINEERING SIGNAL</p>
-            <h3>“We need $6.0M for inference optimization.”</h3>
+            <p class="micro">PROPOSED GPU RUN</p>
+            <h3>“Run an inference optimization test on 8× H100s for 12 hours.”</h3>
             <ul>
-              <li>Memory bandwidth bottleneck</li>
-              <li>GPU utilization: 41%</li>
-              <li>P95 latency: 890 ms</li>
-              <li>Expected utilization after work: 63–70%</li>
+              <li>Hypothesis: fused kernels reduce P95 latency</li>
+              <li>Decision: whether to scale the optimization</li>
+              <li>Success gate: latency below 700 ms</li>
+              <li>Requested capacity: 96 GPU-hours</li>
             </ul>
           </div>
           <div class="translator">
-            <div class="agent-orb">AI</div>
+            <div class="agent-orb">GPU</div>
             <div class="connector"></div>
-            <p>evidence<br>→ model<br>→ decision</p>
+            <p>evidence<br>→ cost<br>→ next test</p>
           </div>
           <div class="side-panel finance-panel">
-            <p class="micro">FINANCE DECISION</p>
-            <h3>Stage $1.1M now. Release $4.9M at milestone.</h3>
+            <p class="micro">PREFLIGHT RECOMMENDATION</p>
+            <h3>Run a 2-GPU pilot first. Reserve the full run if the gate passes.</h3>
             <ul>
-              <li>Cost / 1M tokens: −24% to −31%</li>
-              <li>Annualized gross profit impact: +$9.4M</li>
-              <li>Payback: 7–10 months</li>
-              <li>Kill gate: utilization &lt; 52% after phase 1</li>
+              <li>Similar internal evidence: partial overlap</li>
+              <li>Pilot cost: 25% of the full run</li>
+              <li>Pilot could resolve most key uncertainty</li>
+              <li>Scale gate: P95 latency below 700 ms</li>
             </ul>
           </div>
         </div>
@@ -79,36 +83,36 @@
       <div class="container">
         <div class="section-kicker">01 / THE PROBLEM</div>
         <div class="split-heading">
-          <h2>The R&D budget is an<br>information problem.</h2>
+          <h2>GPU allocation is a<br>learning problem.</h2>
           <p>
-            R&D differs from normal capital spending: outcomes are uncertain, much of the asset is intangible, and the people closest to the technology usually hold information that is hard to summarize in conventional financial metrics. That creates an internal information gap before a single dollar is allocated.
+            A run can be technically valid and still be the wrong next experiment. The real question is whether it buys enough decision-changing evidence to justify its compute, engineering time, queue delay, and opportunity cost.
           </p>
         </div>
 
         <div class="problem-flow">
           <div class="flow-card">
             <span class="number">01</span>
-            <h3>Technical insight is “soft”</h3>
-            <p>Benchmarks, architecture tradeoffs, tacit engineering judgment, failure modes, and research uncertainty are difficult to compress into a spreadsheet.</p>
+            <h3>The decision is missing</h3>
+            <p>Requests describe models, GPUs, and metrics, but often omit the product or funding decision the result is supposed to change.</p>
           </div>
           <div class="arrow">→</div>
           <div class="flow-card">
             <span class="number">02</span>
-            <h3>Finance needs comparability</h3>
-            <p>Projects compete for limited cash, headcount, compute, and time. Finance needs a common language for return, risk, timing, and downside.</p>
+            <h3>Evidence is fragmented</h3>
+            <p>Prior runs, failed configurations, cloud cost, queue state, tickets, and researcher judgment live in different systems and teams.</p>
           </div>
           <div class="arrow">→</div>
           <div class="flow-card accent-card">
             <span class="number">03</span>
-            <h3>Translation failure</h3>
-            <p>High-potential R&D can be underfunded, while persuasive but weak projects can also be overfunded. The issue is allocation quality — not automatically “more R&D.”</p>
+            <h3>Compute gets misallocated</h3>
+            <p>Teams repeat old work, begin too large, or wait behind low-value jobs while useful negative results disappear into isolated logs.</p>
           </div>
         </div>
 
         <div class="quote-card">
           <div class="quote-mark">“</div>
-          <p>When information about investment projects is soft and cannot be credibly transmitted, hierarchy can struggle to allocate capital efficiently.</p>
-          <span>Conceptual implication of Jeremy C. Stein (2002), <em>Information Production and Capital Allocation</em>.</span>
+          <p>Every expensive GPU experiment should have a reason, a stopping rule, and a record of what decision it changed.</p>
+          <span>The product principle behind GPU Experiment Allocator.</span>
         </div>
       </div>
     </section>
@@ -116,65 +120,65 @@
     <section id="system" class="section container">
       <div class="section-kicker">02 / THE SYSTEM</div>
       <div class="split-heading">
-        <h2>An AI operating layer<br>between CTO and CFO.</h2>
+        <h2>A preflight layer before<br>expensive GPU runs.</h2>
         <p>
-          The product does not replace engineering judgment or financial control. It converts technical evidence into a traceable economic model, asks what information is missing, and recommends staged capital decisions with explicit assumptions.
+          The proposed product would turn an experiment request into an auditable recommendation. It would search what the organization already knows, estimate resource exposure, check constraints, and propose the smallest run that can change a real decision.
         </p>
       </div>
 
       <div class="architecture card">
         <div class="arch-col">
-          <p class="micro">TECHNICAL INPUTS</p>
-          <div class="chip">Benchmarks</div>
-          <div class="chip">Git / Jira / Linear</div>
-          <div class="chip">Experiment logs</div>
-          <div class="chip">Architecture docs</div>
-          <div class="chip">Research papers</div>
+          <p class="micro">EXPERIMENT CONTEXT</p>
+          <div class="chip">Hypothesis + decision</div>
+          <div class="chip">MLflow / W&B history</div>
+          <div class="chip">Success + stop gates</div>
+          <div class="chip">Model / data / workload</div>
+          <div class="chip">Dependencies</div>
         </div>
         <div class="arch-line"></div>
         <div class="arch-core">
           <div class="core-ring ring-1"></div>
           <div class="core-ring ring-2"></div>
           <div class="core-content">
-            <strong>R&D<br>DECISION<br>GRAPH</strong>
-            <span>evidence + economics</span>
+            <strong>GPU<br>EXPERIMENT<br>ALLOCATOR</strong>
+            <span>evidence + compute</span>
           </div>
         </div>
         <div class="arch-line"></div>
         <div class="arch-col">
-          <p class="micro">FINANCIAL INPUTS</p>
-          <div class="chip">Budget / runway</div>
-          <div class="chip">Unit economics</div>
-          <div class="chip">Cloud / capex costs</div>
-          <div class="chip">Demand forecasts</div>
-          <div class="chip">Cost of capital</div>
+          <p class="micro">RESOURCE CONTEXT</p>
+          <div class="chip">GPU count + hours</div>
+          <div class="chip">Cloud / internal cost</div>
+          <div class="chip">Queue + capacity</div>
+          <div class="chip">Team budget</div>
+          <div class="chip">Approval threshold</div>
         </div>
       </div>
 
       <div class="agent-grid">
         <article class="agent-card">
-          <span>01</span><h3>Technical Agent</h3>
-          <p>Builds a causal model of the system: bottlenecks, dependencies, performance limits, engineering effort, and technical uncertainty.</p>
+          <span>01</span><h3>Experiment contract</h3>
+          <p>Records the hypothesis, requested resources, decision to be changed, success threshold, stop condition, and owner.</p>
         </article>
         <article class="agent-card">
-          <span>02</span><h3>Economics Agent</h3>
-          <p>Maps technical metrics into dollars: throughput → cost per unit → margin → cash flow → strategic economic impact.</p>
+          <span>02</span><h3>Prior-evidence search</h3>
+          <p>Retrieves similar runs, failed configurations, reusable results, and unresolved questions before new compute is approved.</p>
         </article>
         <article class="agent-card">
-          <span>03</span><h3>Evidence Agent</h3>
-          <p>Separates observed facts from assumptions, reconciles conflicting numbers, and records confidence and source provenance.</p>
+          <span>03</span><h3>Cost + duration estimate</h3>
+          <p>Forecasts GPU-hours, runtime, queue impact, and budget exposure, then compares the request with actual historical runs.</p>
         </article>
         <article class="agent-card">
-          <span>04</span><h3>Experiment Agent</h3>
-          <p>Finds the cheapest next experiment that can reduce the most economically important uncertainty before more capital is committed.</p>
+          <span>04</span><h3>Pilot designer</h3>
+          <p>Finds a smaller proxy or staged run that can answer the same decision-relevant question before full capacity is committed.</p>
         </article>
         <article class="agent-card">
-          <span>05</span><h3>Portfolio Optimizer</h3>
-          <p>Allocates cash, engineers, compute, and time across competing projects under budget and organizational constraints.</p>
+          <span>05</span><h3>Constraint check</h3>
+          <p>Checks budget, cluster capacity, data readiness, evaluation dependencies, and conflicts with higher-priority work.</p>
         </article>
         <article class="agent-card">
-          <span>06</span><h3>Decision Memo Agent</h3>
-          <p>Produces an auditable CFO/board memo: fund, stage, pause, kill, outsource, acquire, or run another experiment.</p>
+          <span>06</span><h3>Human decision memo</h3>
+          <p>Recommends approve, pilot, reuse, narrow, defer, or stop—with assumptions, evidence, limits, and a follow-on gate.</p>
         </article>
       </div>
     </section>
@@ -182,79 +186,105 @@
     <section class="section dark-band">
       <div class="container">
         <div class="section-kicker">03 / DECISION LOGIC</div>
-        <h2 class="wide-title">Do not optimize for “ROI.”<br><span>Optimize the sequence of learning and capital.</span></h2>
+        <h2 class="wide-title">Buy the cheapest evidence<br><span>that can change the decision.</span></h2>
 
         <div class="equation-card">
           <div class="equation-label">OBJECTIVE</div>
-          <div class="equation">Expected Value + Option Value + Information Value + Strategic Value <b>−</b> Capital Cost <b>−</b> Risk</div>
+          <div class="equation">P(evidence changes action) × value at stake + reusable learning <b>−</b> compute <b>−</b> labor <b>−</b> delay</div>
           <div class="constraints">
-            <span>Cash ≤ Budget</span>
-            <span>Engineers ≤ Capacity</span>
-            <span>Compute ≤ Available</span>
+            <span>GPU-hours ≤ Capacity</span>
+            <span>Cost ≤ Approval limit</span>
             <span>Dependencies satisfied</span>
+            <span>Human owner approves</span>
           </div>
         </div>
 
         <div class="decision-loop">
-          <div class="loop-node"><b>1</b><span>Propose</span><small>Engineering thesis</small></div>
+          <div class="loop-node"><b>1</b><span>Contract</span><small>Hypothesis + gate</small></div>
           <div class="loop-arrow">→</div>
-          <div class="loop-node"><b>2</b><span>Translate</span><small>Technical → economic</small></div>
+          <div class="loop-node"><b>2</b><span>Search</span><small>Prior evidence</small></div>
           <div class="loop-arrow">→</div>
-          <div class="loop-node"><b>3</b><span>Test</span><small>Highest-value experiment</small></div>
+          <div class="loop-node"><b>3</b><span>Estimate</span><small>Cost + capacity</small></div>
           <div class="loop-arrow">→</div>
-          <div class="loop-node"><b>4</b><span>Update</span><small>Bayesian evidence</small></div>
+          <div class="loop-node"><b>4</b><span>Approve</span><small>Human + limits</small></div>
           <div class="loop-arrow">→</div>
-          <div class="loop-node"><b>5</b><span>Allocate</span><small>Stage / scale / stop</small></div>
+          <div class="loop-node"><b>5</b><span>Learn</span><small>Result → evidence</small></div>
         </div>
       </div>
     </section>
 
     <section id="simulator" class="section container">
-      <div class="section-kicker">04 / INTERACTIVE EXAMPLE</div>
+      <div class="section-kicker">04 / EXPERIMENT PREFLIGHT</div>
       <div class="split-heading">
-        <h2>Would you fund the<br>next phase?</h2>
-        <p>Change the assumptions. The point is not that a formula can replace judgment — it is that the technical thesis becomes explicit, testable, and comparable with other uses of capital.</p>
+        <h2>Preflight a GPU<br>experiment.</h2>
+        <p>Estimate GPU-hours and compute cost, record the decision gate, and compare a pilot with the requested run. These are transparent prototype rules—not a trained model or production approval policy.</p>
       </div>
 
       <div class="sim-grid">
         <div class="sim-controls card">
           <label>
-            <span>Full project cost</span><output id="costOut">$8.0M</output>
-            <input id="cost" type="range" min="1" max="25" value="8" step="0.5">
+            <span>Requested GPU count</span><output id="gpuCountOut" for="gpuCount">8 GPUs</output>
+            <input id="gpuCount" type="range" min="1" max="64" value="8" step="1">
           </label>
           <label>
-            <span>Value if successful</span><output id="valueOut">$30M</output>
-            <input id="value" type="range" min="5" max="100" value="30" step="1">
+            <span>Estimated runtime</span><output id="runtimeOut" for="runtime">12 h</output>
+            <input id="runtime" type="range" min="1" max="72" value="12" step="1">
           </label>
           <label>
-            <span>Technical success probability</span><output id="probOut">35%</output>
-            <input id="prob" type="range" min="5" max="95" value="35" step="1">
+            <span>Blended cost per GPU-hour</span><output id="gpuRateOut" for="gpuRate">$4</output>
+            <input id="gpuRate" type="range" min="1" max="15" value="4" step="0.25">
           </label>
           <label>
-            <span>Phase-1 experiment cost</span><output id="expCostOut">$0.8M</output>
-            <input id="expCost" type="range" min="0.1" max="5" value="0.8" step="0.1">
+            <span>Pilot size</span><output id="pilotPercentOut" for="pilotPercent">25%</output>
+            <input id="pilotPercent" type="range" min="5" max="100" value="25" step="5">
           </label>
           <label>
-            <span>Experiment can resolve uncertainty</span><output id="infoOut">70%</output>
-            <input id="info" type="range" min="10" max="95" value="70" step="5">
+            <span>Chance the evidence changes the decision <small>(your estimate)</small></span><output id="decisionChanceOut" for="decisionChance">65%</output>
+            <input id="decisionChance" type="range" min="0" max="100" value="65" step="5">
+          </label>
+          <label>
+            <span>Preflight approval limit</span><output id="approvalLimitOut" for="approvalLimit">$500</output>
+            <input id="approvalLimit" type="range" min="50" max="10000" value="500" step="50">
+          </label>
+          <label class="select-label">
+            <span>Success metric</span>
+            <select id="successMetric">
+              <option value="latency improvement" selected>Latency improvement</option>
+              <option value="throughput improvement">Throughput improvement</option>
+              <option value="cost-per-result reduction">Cost-per-result reduction</option>
+              <option value="quality or evaluation improvement">Quality / evaluation improvement</option>
+            </select>
+          </label>
+          <label>
+            <span>Minimum improvement required</span><output id="successGateOut" for="successGate">20%</output>
+            <input id="successGate" type="range" min="0" max="50" value="20" step="5">
+          </label>
+          <label class="select-label">
+            <span>Prior comparable evidence <small>(your assessment)</small></span>
+            <select id="priorEvidence">
+              <option value="none">None known</option>
+              <option value="partial" selected>Partial</option>
+              <option value="strong">Strong and reusable</option>
+            </select>
           </label>
         </div>
 
-        <div class="sim-result card">
+        <div class="sim-result card" aria-live="polite">
           <div class="result-top">
-            <span class="micro">AGENT RECOMMENDATION</span>
-            <span id="recommendationBadge" class="recommendation-badge">STAGE FIRST</span>
+            <span class="micro">RULE-BASED PREFLIGHT</span>
+            <span id="recommendationBadge" class="recommendation-badge">RUN PILOT</span>
           </div>
-          <h3 id="recommendationText">Fund the experiment before committing the full project budget.</h3>
+          <h3 id="recommendationText">Run a smaller pilot before releasing the full GPU request.</h3>
           <div class="metric-row">
-            <div><small>Naive project EV</small><strong id="evMetric">$2.5M</strong></div>
-            <div><small>Capital at risk now</small><strong id="riskMetric">$0.8M</strong></div>
-            <div><small>Information score</small><strong id="infoMetric">High</strong></div>
+            <div><small>Requested compute</small><strong id="requestedMetric">96 GPU-h</strong></div>
+            <div><small>Estimated full-run cost</small><strong id="costMetric">$384</strong></div>
+            <div><small>Estimated pilot</small><strong id="pilotMetric">24 GPU-h · $96</strong></div>
           </div>
           <div class="memo">
-            <div class="memo-title">DECISION MEMO</div>
+            <div class="memo-title">PREFLIGHT NOTE</div>
             <p id="memoText"></p>
           </div>
+          <p class="sim-disclaimer">Illustrative local demo only. It has no model, scheduler, billing, or experiment-tracker connection. Estimates exclude labor, storage, networking, queue delay, and reserved-capacity economics.</p>
         </div>
       </div>
     </section>
@@ -264,7 +294,7 @@
         <div class="section-kicker">05 / RESEARCH BASE</div>
         <div class="split-heading">
           <h2>The thesis has a<br>real academic foundation.</h2>
-          <p>These papers do not prove that every finance–engineering disagreement causes underinvestment. They show the mechanisms the product is designed around: asymmetric information, soft information, internal capital-market distortions, short-term incentives, and staged R&D investment under uncertainty.</p>
+          <p>These papers motivate the product thesis: soft information, financing frictions, internal capital-market distortions, and staged investment under uncertainty. They do not validate this prototype, its illustrative rules, or any specific recommendation.</p>
         </div>
 
         <div class="papers">
@@ -278,7 +308,7 @@
           <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w15325">
             <div><span class="paper-year">2009/10</span><span class="paper-tag">R&D FINANCE</span></div>
             <h3>The Financing of R&D and Innovation</h3>
-            <p>Bronwyn H. Hall & Josh Lerner · NBER / Handbook of the Economics of Innovation</p>
+            <p>Bronwyn H. Hall &amp; Josh Lerner · NBER / Handbook of the Economics of Innovation</p>
             <small>Why it matters → R&D is unusually exposed to information asymmetry, intangible assets, uncertainty, and financing frictions.</small>
           </a>
 
@@ -292,14 +322,14 @@
           <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w10550">
             <div><span class="paper-year">2004/05</span><span class="paper-tag">SHORT-TERM PRESSURE</span></div>
             <h3>The Economic Implications of Corporate Financial Reporting</h3>
-            <p>John Graham, Campbell Harvey & Shiva Rajgopal · NBER / JAE</p>
+            <p>John Graham, Campbell Harvey &amp; Shiva Rajgopal · NBER / JAE</p>
             <small>Why it matters → surveyed executives reported willingness to sacrifice long-term economic value to hit short-run reporting targets.</small>
           </a>
 
           <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w5969">
             <div><span class="paper-year">2000</span><span class="paper-tag">MISALLOCATION</span></div>
             <h3>The Dark Side of Internal Capital Markets</h3>
-            <p>David Scharfstein & Jeremy Stein · Journal of Finance</p>
+            <p>David Scharfstein &amp; Jeremy Stein · Journal of Finance</p>
             <small>Why it matters → internal politics and rent-seeking can distort capital budgeting, so the product must evaluate evidence rather than simply trust project advocates.</small>
           </a>
 
@@ -313,14 +343,14 @@
           <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w34838">
             <div><span class="paper-year">2026</span><span class="paper-tag">EXPERIMENTATION</span></div>
             <h3>R&D Uncertainty and Cycles</h3>
-            <p>Nicolas Crouzet & Janice C. Eberly · NBER / AEA P&P</p>
+            <p>Nicolas Crouzet &amp; Janice C. Eberly · NBER / AEA P&amp;P</p>
             <small>Why it matters → R&D can itself be valuable because investment generates information and resolves uncertainty.</small>
           </a>
 
           <a class="paper" target="_blank" rel="noopener" href="https://www.nber.org/papers/w26847">
             <div><span class="paper-year">2020</span><span class="paper-tag">RISK BIAS</span></div>
             <h3>The Risk of Caution: Evidence from an R&D Experiment</h3>
-            <p>Carson, Graff Zivin, Louviere, Sadoff & Shrader · NBER</p>
+            <p>Carson, Graff Zivin, Louviere, Sadoff &amp; Shrader · NBER</p>
             <small>Why it matters → experimental evidence that decision-makers can favor safer R&D projects even when higher-risk projects offer larger expected payoffs.</small>
           </a>
         </div>
@@ -328,22 +358,22 @@
     </section>
 
     <section class="section container">
-      <div class="section-kicker">06 / WHY NOW</div>
+      <div class="section-kicker">06 / WHY GPU EXPERIMENTS FIRST</div>
       <div class="semi-card card">
         <div>
-          <p class="micro">A VISIBLE MARKET SIGNAL</p>
-          <h2>SemiAnalysis is already hiring humans to bridge technical systems and economics.</h2>
-          <p>Their AI Infrastructure & Economics role explicitly combines GPU capacity, prices, contracts, financing, unit economics, technical material, benchmark implications, and financial models. That is not the same product — but it is evidence that the translation layer itself is valuable work.</p>
-          <a target="_blank" rel="noopener" href="https://semianalysis.com/semianalysis-careers/#role-mts-research-analyst-ai-infrastructure-economics">Open the SemiAnalysis role ↗</a>
+          <p class="micro">A TRACTABLE FIRST DECISION CLASS</p>
+          <h2>Compute makes the cost of uncertainty visible.</h2>
+          <p>GPU experiments recur frequently, compete for explicit capacity, and leave measurable outcomes. Smaller pilots can often precede expensive runs, while useful negative results can prevent another team from buying the same answer twice.</p>
+          <p>The product can prove that it improves experiment decisions here before expanding into a broader R&D capital-allocation system.</p>
         </div>
         <div class="semi-stack">
-          <div>TECHNICAL MATERIAL</div>
+          <div>MEASURABLE COST</div>
           <span>↓</span>
-          <div>BENCHMARK IMPLICATIONS</div>
+          <div>REPEATED DECISIONS</div>
           <span>↓</span>
-          <div>UNIT ECONOMICS</div>
+          <div>REUSABLE EVIDENCE</div>
           <span>↓</span>
-          <div>CAPITAL DECISION</div>
+          <div>BROADER R&D INTELLIGENCE</div>
         </div>
       </div>
     </section>
@@ -352,21 +382,28 @@
       <div class="container">
         <div class="section-kicker">07 / MVP</div>
         <div class="split-heading">
-          <h2>Start narrow:<br>AI infrastructure.</h2>
-          <p>A universal “AI CFO for R&D” is too broad. Start where engineering variables and financial outputs can actually be measured: AI infrastructure, inference, cloud capacity, GPUs, networking, and compute economics.</p>
+          <h2>Start narrow:<br>one tracker, one cluster.</h2>
+          <p>The first question is deliberately specific: should this GPU experiment run now, at this scale, and under what limits? Launch in shadow mode—the system recommends and records, but blocks nothing.</p>
         </div>
 
         <div class="mvp-grid">
-          <div class="mvp-step"><b>01</b><h3>One decision class</h3><p>“Where should the next $1 of AI infrastructure spend go?”</p></div>
-          <div class="mvp-step"><b>02</b><h3>Connect evidence</h3><p>Cloud bills, utilization, benchmark logs, traffic forecasts, GPU pricing, contracts.</p></div>
-          <div class="mvp-step"><b>03</b><h3>Build translation model</h3><p>Latency / throughput / utilization → cost per token → gross margin → cash impact.</p></div>
-          <div class="mvp-step"><b>04</b><h3>Generate decision memo</h3><p>Fund, stage, test, wait, or stop — with assumptions and kill gates.</p></div>
+          <div class="mvp-step"><b>01</b><h3>Connect one workflow</h3><p>One experiment tracker, one execution environment, and one internal GPU-hour cost model.</p></div>
+          <div class="mvp-step"><b>02</b><h3>Preflight the run</h3><p>Capture the hypothesis, decision, resources, dependencies, success gate, and stopping rule.</p></div>
+          <div class="mvp-step"><b>03</b><h3>Recommend next action</h3><p>Retrieve evidence, estimate exposure, and suggest pilot, approve, reuse, narrow, defer, or stop.</p></div>
+          <div class="mvp-step"><b>04</b><h3>Preserve the learning</h3><p>Compare requested, predicted, and actual cost; record the result and decision it changed.</p></div>
+        </div>
+
+        <div class="guardrail-row" aria-label="Product guardrails">
+          <span>Human approval stays mandatory</span>
+          <span>Ranges over false precision</span>
+          <span>Protected exploration budget</span>
+          <span>Negative results remain evidence</span>
         </div>
 
         <div class="final-thesis">
-          <span>THE COMPANY THESIS</span>
-          <h2>Turn corporate R&D from a budget negotiation into an evidence-updating capital allocation system.</h2>
-          <p>Not “give engineers more money.” Give finance a better way to understand what the money is buying, what must be true for the bet to work, and what the company should learn before committing the next dollar.</p>
+          <span>FROM FIRST WEDGE TO LONG-TERM VISION</span>
+          <h2>Spend the least capital necessary to discover which ideas deserve more.</h2>
+          <p><strong>Observer:</strong> detect duplication and missing context. <strong>Advisor:</strong> recommend pilots, limits, and priorities. <strong>Governor:</strong> enforce already-approved limits only after the organization has earned trust in the system.</p>
         </div>
       </div>
     </section>
@@ -374,8 +411,8 @@
 
   <footer>
     <div class="container footer-grid">
-      <div><strong>R&D Capital Intelligence</strong><p>By vatsal Prajapati · September 2026</p></div>
-      <div><p>Research links point to publisher, university, or NBER pages. Illustrative financial examples are hypothetical and are not investment advice.</p></div>
+      <div><strong>GPU Experiment Allocator</strong><p>An R&D Capital Intelligence concept · Vatsal Prajapati · September 2026</p></div>
+      <div><p>Static prototype with illustrative, rule-based outputs. Human decision support only; no automated approvals or GPU scheduling.</p></div>
     </div>
   </footer>
 

@@ -159,15 +159,16 @@ The product can mature in three stages:
 This repository currently contains a **static concept website**, not a
 production allocation engine. It demonstrates:
 
-- the finance-to-engineering translation problem;
-- a proposed multi-agent decision system;
-- a simple, rule-based staged-funding simulator;
-- the initial AI-infrastructure use case; and
+- the GPU experiment-allocation problem;
+- a proposed experiment-decision workflow;
+- a simple, rule-based GPU experiment preflight simulator;
+- the initial shadow-mode MVP and its guardrails; and
 - research supporting the product thesis.
 
 The site has no backend, model calls, external integrations, authentication,
-persistent data, GPU scheduler, or automated approval capability. Financial
-examples are illustrative and hypothetical, and are not investment advice.
+persistent data, GPU scheduler, or automated approval capability. Its costs and
+recommendations are illustrative prototype outputs, exclude labor and other
+infrastructure costs, and are not a production approval policy.
 
 ## Run locally
 
@@ -189,7 +190,7 @@ prototype runs locally.
 .
 ├── index.html                 # Concept site and research links
 ├── styles.css                 # Responsive visual design
-├── script.js                  # Interactive funding simulator
+├── script.js                  # Interactive GPU preflight simulator
 └── images/
     └── mermaid-diagram.png    # Experiment allocation workflow
 ```
